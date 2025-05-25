@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio - Poster, Flyer & Logo Designer + merchandise</title>
+  <style>
+    /* Reset & base styles */
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #111;
+      color: #eee;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    a {
+      color: #f48fb1;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    header {
+      background: rgba(0,0,0,0.7);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .logo-title {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;       /* Makes it circular */
+  object-fit: cover;
+  border: 2px solid #f48fb1; /* Optional: pink border for style */
+}
+
+    }
+    nav a {
+      margin-left: 1.5rem;
+      font-weight: 600;
+    }
+
+    /* Hero section with BG image */
+    #hero {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') center center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 1rem;
+      color: #fff;
+      text-shadow: 0 0 15px rgba(0,0,0,0.8);
+    }
+    #hero h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+      /* Custom font colors with spans */
+    }
+    #hero h1 span.poster {
+      color: #ED6A5A; /* poster red/orange */
+      font-family: 'Brush Script MT', cursive;
+      font-weight: 700;
+    }
+    #hero h1 span.flyer {
+      color: #4A90E2; /* flyer blue */
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: 600;
+    }
+    #hero h1 span.logo {
+      color: #50C878; /* logo green */
+      font-family: 'Georgia', serif;
+      font-weight: 700;
+    }
+    #hero p {
+      margin-top: 1rem;
+      font-size: 1.3rem;
+      max-width: 600px;
+      font-style: italic;
+      color: #ddd;
+    }
+
+    main {
+      flex-grow: 1;
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    /* About Section */
+    #about {
+      background: #222;
+      padding: 2rem 1rem;
+      border-radius: 10px;
+      text-align: center;
+      color: #ccc;
+      font-size: 1.1rem;
+      max-width: 900px;
+      margin: 0 auto 3rem;
+    }
+
+    /* Gallery Section */
+    #gallery {
+      margin-bottom: 3rem;
+    }
+    #gallery h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #f48fb1;
+      font-weight: 700;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 1rem;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(244, 143, 177, 0.5);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .gallery-grid img:hover,
+    .gallery-grid img:focus {
+      transform: scale(1.05);
+      outline: none;
+      box-shadow: 0 0 15px #f48fb1;
+    }
+
+    /* Contact Section */
+    #contact {
+      background: #222;
+      padding: 2rem 1rem;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      color: #eee;
+    }
+    #contact h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #f48fb1;
+    }
+    form label {
+      display: block;
+      margin: 0.75rem 0 0.3rem;
+      font-weight: 600;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+    }
+    form textarea {
+      min-height: 120px;
+    }
+    form button {
+      margin-top: 1rem;
+      background: #f48fb1;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #222;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      width: 100%;
+    }
+    form button:hover,
+    form button:focus {
+      background: #ED6A5A;
+      outline: none;
+      color: #fff;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #777;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      border-top: 1px solid #333;
+    }
+    footer a {
+      color: #f48fb1;
+      font-weight: 600;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      #hero h1 {
+        font-size: 2.4rem;
+      }
+      #hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+      <header role="banner">
+  <div class="logo-title">
+    <img src="c:\Users\hp\Downloads\DoodleFuel Logo with Spark Icon.png" alt="Logo" class="logo-img" />
+    <h1>DoodleFuel</h1>
+  </div>
+  <nav role="navigation" aria-label="Primary navigation">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+
+  <section id="hero" role="img" aria-label="Creative background image with portfolio title">
+    <h1>
+      <span class="poster">Poster</span>, 
+      <span class="flyer">Flyer</span> &amp; 
+      <span class="logo">Logo</span> Designer
+    </h1>
+    <p>Print-on-demand clothing &amp; merchandise. Unique creative designs tailored for your events and brand.</p>
+  </section>
+
+  <main>
+    <section id="about" aria-label="About me">
+      <h2>About Me</h2>
+      <p>
+        I'm a passionate designer specializing in posters, event flyers, logos, and print-on-demand clothing merchandise. 
+        Combining creativity with professional design skills, I deliver eye-catching and effective visual solutions to help your brand stand out.
+      </p>
+    </section>
+
+    <section id="gallery" aria-label="Gallery of design works">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <img src="c:\Users\hp\Downloads\V.png" alt="Gallery Image 1" tabindex="0" />
+        <img src="c:\Users\hp\Downloads\Teal Yellow Modern Boost Your Energy Tips YouTube Thumbnail.png" alt="Gallery Image 2" tabindex="0" />
+        <img src="c:\Users\hp\Downloads\Green Minimalist Kids Summer Camp Flyer.png" alt="Gallery Image 3" tabindex="0" />
+        <img src="c:\Users\hp\Downloads\Screenshot_2025-05-16_025515-removebg-preview.png" alt="Gallery Image 4" tabindex="0" />
+        <img src="c:\Users\hp\Downloads\NETGLOBAL.png" alt="Gallery Image 5" tabindex="0" />
+        <img src="c:\Users\hp\Downloads\DoodleFuel Logo with Spark Icon.png" alt="Gallery Image 6" tabindex="0" />
+      </div>
+    </section>
+
+    <section id="contact" aria-label="Contact form">
+      <h2>Contact Me</h2>
+      <form action="#" method="post" aria-describedby="contact-desc">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required aria-required="true" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="your.email@example.com" required aria-required="true" />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message here" required aria-required="true"></textarea>
+
+        <button type="submit" aria-label="Send Message">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>© 2025 Your Name. All rights reserved. | <a href="#contact">Contact Me</a></p>
+  </footer>
+</body>
+</html>
+
